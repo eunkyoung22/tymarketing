@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tyCafe.list.Dao.ListDao">
+	<resultMap id="selectCafeList" type="tyCafe.list.VO.ListVO">
+        <result property="memberNum" column="member_num"/>
+    </resultMap>
+    
+	<select id="selectCafeList" resultMap="selectCafeList" resultType="tyCafe.list.VO.ListVO">
+		SELECT name,
+			   src,
+			   gubun,
+			   area,
+			   member_num
+	      FROM cafelist
+	     WHERE 1=1
+	  ORDER BY member_num DESC
+	</select>
+</mapper>
